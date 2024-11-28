@@ -1,4 +1,6 @@
-﻿@inherits LayoutComponentBase
+﻿@using System.Security.Principal
+
+@inherits LayoutComponentBase
 
 <div class="bb-page">
 
@@ -9,7 +11,10 @@
 
     <main>
         <div class="bb-top-row px-4 d-flex justify-content-end">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+            @if (UserName != null)
+            {
+                <div class="bb-top-row px-4 d-flex justify-content-begin">@UserName</div>
+            }
         </div>
 
         <article class="content px-4">
@@ -22,6 +27,8 @@
 @code {
     Sidebar sidebar;
     IEnumerable<NavItem> navItems;
+    
+    string UserName = WindowsIdentity.GetCurrent().Name;
 
     private async Task<SidebarDataProviderResult> SidebarDataProvider(SidebarDataProviderRequest request)
     {
