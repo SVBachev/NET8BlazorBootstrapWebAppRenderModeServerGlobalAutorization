@@ -2,7 +2,7 @@
   <img align="center" src="https://github.com/SVBachev/OWL-VMS/blob/main/logo.png?raw=true" width="150"/> 
 </p>
 
-<h1><div align="center">IniFile</h1>
+<h1><div align="center">OWL VMS</h1>
 <p align="center">
   <img src="https://img.shields.io/badge/PRICE-free-%231DC8EE"/>
   <img src="https://img.shields.io/badge/SUPPORT-no-%231DC8EE"/>
