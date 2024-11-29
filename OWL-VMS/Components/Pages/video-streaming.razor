@@ -1,0 +1,47 @@
+﻿@page "/video-streaming"
+@using Microsoft.AspNetCore.SignalR.Client
+
+<h1>Потоковое видео</h1>
+
+<video id="video" width="640" height="480" autoplay></video>
+
+@code {
+    private HubConnection _hubConnection;
+
+    public video_streaming(HubConnection hubConnection)
+    {
+        _hubConnection = hubConnection;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Создаем соединение с хабом
+            _hubConnection = new HubConnectionBuilder().WithUrl("/videoHub").Build();
+
+            // Подписываемся на получение видео потока
+            _hubConnection.On("ReceiveVideoStream", (byte[] videoStream) =>
+            {
+                // Добавляем видео поток в видео тег
+                // var video = await JsRuntime.InvokeAsync<VideoElement>("document.getElementById", "video");
+                // await JsRuntime.InvokeAsync<object>("video.srcObject", videoStream);
+            });
+
+            // Начинаем получение видео потока
+            await _hubConnection.StartAsync();
+        }
+    }
+
+    public async Task Disconnect()
+    {
+        // Останавливаем видео поток
+        await _hubConnection.StopAsync();
+    }
+
+    public async Task DisposeAsync()
+    {
+        // Останавливаем видео поток
+        await _hubConnection.DisposeAsync();
+    }
+}

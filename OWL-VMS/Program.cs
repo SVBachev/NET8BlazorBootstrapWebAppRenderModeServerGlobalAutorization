@@ -20,14 +20,21 @@ builder.Services.AddBlazorBootstrap(); // Add this line
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
+    // Отключите сжатие ответа для горячей перезагрузки
+    // Всегда вызывайте UseResponseCompression первым в конвейере обработки запросов
+    app.UseResponseCompression();
+
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
+    
 }
 
 app.UseHttpsRedirection();
@@ -40,5 +47,12 @@ app.UseAntiforgery();
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
+
+app.UseWebSockets();
+
+var webSocketOptions = new WebSocketOptions
+{
+    // KeepAliveInterval = TimeSpan.FromMinutes(5)
+};
 
 app.Run();

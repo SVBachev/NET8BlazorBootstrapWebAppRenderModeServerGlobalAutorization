@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OWL-VMS", "OWL-VMS.csproj", "{3AF9CA9A-1C70-4FC2-96C9-207AD62DB03D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3AF9CA9A-1C70-4FC2-96C9-207AD62DB03D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AF9CA9A-1C70-4FC2-96C9-207AD62DB03D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AF9CA9A-1C70-4FC2-96C9-207AD62DB03D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AF9CA9A-1C70-4FC2-96C9-207AD62DB03D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8FBB4A76-FA2A-43DF-BDA1-C75BA6C121AE}
+	EndGlobalSection
+EndGlobal
