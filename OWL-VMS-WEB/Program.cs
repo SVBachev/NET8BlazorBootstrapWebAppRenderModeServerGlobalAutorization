@@ -1,7 +1,6 @@
-using NET8.BlazorWebAppRenderModeServerGlobal.Components;
 using Microsoft.AspNetCore.Authentication.Negotiate;
-using NET8.BlazorWebAppRenderModeServerGlobal;
-using Microsoft.AspNetCore.Components.Authorization;
+using OWL_VMS_WEB.Components;
+
 
 var builder = WebApplication.CreateBuilder(args);
 

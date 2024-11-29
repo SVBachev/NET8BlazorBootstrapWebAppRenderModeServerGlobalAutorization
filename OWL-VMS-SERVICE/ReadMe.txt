@@ -4,12 +4,22 @@
 	Если вам нужно изменить корень содержимого конфигурации узла, вы можете передать его в качестве аргумента командной строки при указании binpath:
 	sc.exe create "Svc Name" binpath="C:\Path\To\App.exe --contentRoot C:\Other\Path"
 
+Запуск службы Windows
+sc.exe start "OWL-VMS-SERVICE"
+
+Остановка службы Windows
+sc.exe stop "OWL-VMS-SERVICE"
+
+Удаление службы 
+sc.exe delete "OWL-VMS-SERVICE"
+
+
 Настройка службы Windows
 
     Просмотр настроек
-	sc.exe qfailure "<Service Name>"
+	sc.exe qfailure "OWL-VMS-SERVICE"
 
-	Чтобы настроить восстановление, используйте команду sc.exe failure "<Service Name>"
+	Чтобы настроить восстановление, используйте команду sc.exe failure "OWL-VMS-SERVICE"
 
 	sc.exe failure ".NET Joke Service" reset=0 actions=restart/60000/restart/60000/run/1000
 
