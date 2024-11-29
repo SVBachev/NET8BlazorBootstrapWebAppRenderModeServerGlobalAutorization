@@ -1,6 +1,23 @@
-OWL VMS - проект для души =) А еще для записи и просмотра камер.
+<p align="center"> 
+  <img align="center" src="https://github.com/SVBachev/OWL-VMS/blob/main/logo.png?raw=true" width="150"/> 
+</p>
 
-Данный проект развиваю в свободное время, для изучения актуальных технологий.
+<h1><div align="center">IniFile</h1>
+<p align="center">
+  <img src="https://img.shields.io/badge/PRICE-free-%231DC8EE"/>
+  <img src="https://img.shields.io/badge/SUPPORT-no-%231DC8EE"/>
+</p>
+  
+<p align="center">
+  <img src="https://img.shields.io/github/downloads/SVBachev/OWL-VMS/total?color=%231DC8EE&label=DOWNLOADS&logo=GitHub&logoColor=%231DC8EE&style=flat"/>
+  <img src="https://img.shields.io/github/last-commit/SVBachev/OWL-VMS?color=%231DC8EE&label=LAST%20COMMIT&style=flat"/>
+  <img src="https://img.shields.io/github/release-date/SVBachev/OWL-VMS?color=%231DC8EE&label=RELEASE%20DATE&style=flat"/>
+</p>
+
+
+<p align="center">
+OWL VMS - проект для души =) А еще для записи и просмотра камер.
+</p>
 
 Описание задачи:
   Сейчас программное обеспечение для видеонаблюдения, по моему субъективному мнению, имеет один или несколько следующих недостатков:
