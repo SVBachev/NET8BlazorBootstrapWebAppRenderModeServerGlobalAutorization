@@ -1,8 +1,12 @@
 using Microsoft.AspNetCore.Authentication.Negotiate;
+using BlazorBootstrap;
 using OWL_VMS_WEB.Components;
 
-
 var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+builder.Services.AddRazorComponents()
+    .AddInteractiveServerComponents();
 
 // Add services to the container.
 builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
@@ -14,44 +18,31 @@ builder.Services.AddAuthorization(options =>
     options.FallbackPolicy = options.DefaultPolicy;
 });
 
-builder.Services.AddBlazorBootstrap(); // Add this line
-
-builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents();
-
-
+builder.Services.AddBlazorBootstrap();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
-{
-    // ќтключите сжатие ответа дл€ гор€чей перезагрузки
+{   // ќтключите сжатие ответа дл€ гор€чей перезагрузки
     // ¬сегда вызывайте UseResponseCompression первым в конвейере обработки запросов
     app.UseResponseCompression();
 
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
-    
 }
 
 app.UseHttpsRedirection();
 
-app.UseAuthentication();
-app.UseAuthorization();
-
-app.UseStaticFiles();
 app.UseAntiforgery();
 
-app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode();
-
+app.UseAuthentication();
+app.UseAuthorization();
 app.UseWebSockets();
 
-var webSocketOptions = new WebSocketOptions
-{
-    // KeepAliveInterval = TimeSpan.FromMinutes(5)
-};
+app.MapStaticAssets();
+app.MapRazorComponents<App>()
+    .AddInteractiveServerRenderMode();
 
 app.Run();
