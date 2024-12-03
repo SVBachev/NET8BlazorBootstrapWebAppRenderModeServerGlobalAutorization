@@ -1,10 +1,11 @@
 ﻿@using System.Security.Principal
+
 @inherits LayoutComponentBase
 
-<BlazorBootstrapLayout StickyHeader="true">
+<BlazorBootstrapLayout StickyHeader="true" style="background-color:.bg-info;">
     <HeaderSection>
-            @if (UserName != null)
-            {
+        @if (UserName != null)
+        {
                 <div class="bb-top-row px-4 d-flex justify-content-begin">@UserName</div>
             }        
             <ThemeSwitcher Class="ps-3 ps-lg-2" Position="DropdownMenuPosition.End" />
@@ -12,9 +13,10 @@
 
     <SidebarSection>
         <Sidebar2 Href="/"
-                  ImageSrc="https://demos.blazorbootstrap.com/images/logo/logo-white.svg"
-                  Title="Blazor Bootstrap"
-                  BadgeText="3.2.0"
+                  
+                  ImageSrc="favicon.png"
+                  Title="OWL VMS"
+                  BadgeText="0.0.1"
                   DataProvider="Sidebar2DataProvider"
                   WidthUnit="Unit.Px" />
     </SidebarSection>
@@ -45,9 +47,11 @@
     {
         navItems = new List<NavItem>
                    {
-                       new NavItem { Id = "1", Href = "/", IconName = IconName.HouseDoorFill, Text = "Home", Match=NavLinkMatch.All},
-                       new NavItem { Id = "2", Href = "/counter", IconName = IconName.PlusSquareFill, Text = "Counter"},
-                       new NavItem { Id = "3", Href = "/weather", IconName = IconName.Table, Text = "Weather"},
+                       new NavItem { Id = "1", Href = "/", IconName = IconName.HouseDoorFill, Text = "Домашняя", Match=NavLinkMatch.All},
+                       new NavItem { Id = "2", Href = "/auth", IconName = IconName.PlusSquareFill, Text = "Авторизация"},
+                       new NavItem { Id = "2", Href = "/list", IconName = IconName.PlusSquareFill, Text = "Простой список"},
+                       new NavItem { Id = "3", Href = "/counter", IconName = IconName.PlusSquareFill, Text = "Счетчик"},
+                       new NavItem { Id = "4", Href = "/weather", IconName = IconName.Table, Text = "Погода"},
                    };
 
         return navItems;
